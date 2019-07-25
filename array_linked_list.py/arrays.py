@@ -1,16 +1,25 @@
 
 
-# Do n ot use any of the built in array functions for this exercise
+# Do not use any of the built in array functions for this exercise
 class array:
-    def __init__(self):
-        # Your code here
-        pass
+    def __init__(self, capacity):
+        self.capacity = capacity # Capactiy of array
+        self.count = 0 # Current count of array
+
+        self.elements = [None] * capacity
 
 
 # Double the size of the given array
 def resize_array():
-    # Your code here
-    pass
+    new_capacity = array.capacity * 2
+    new_elements = [None] * new_capacity
+
+    # Copy over elements
+    for i in range(array.count):
+        new_elements[i] = array.elements[i]
+
+    array.elements = new_elements
+    array.capacity = new_capacity
 
 
 # Return an element of a given array at a given index
