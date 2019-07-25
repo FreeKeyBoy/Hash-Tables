@@ -24,22 +24,29 @@ def resize_array():
 
 # Return an element of a given array at a given index
 def array_read():
-    # Throw an error if array is out of the current count
-    # Your code here
-    pass
+    if index >= array.count:
+        print("Error: Index out of bounds")
+        return None
+    return array.elements[index]
 
 
 # Insert an element in a given array at a given index
-def array_insert():
+def array_insert(array, element, index):
     # Throw an error if array is out of the current count
-
+    if index > array.count:
+        print("Error: Index out of bounds in array_insert")
+        return None
     # Resize the array if the number of elements is over capacity
-
+    if array.capacity <= array.count:
+        resize_array(array)
     # Move the elements to create a space at 'index'
+    for i in range(array.count, index, -1):
+        array.elements[i] = array.elements[i - 1]
     # Think about where to start!
 
     # Add the new element to the array and update the count
-    pass
+    array.elements[index] = element
+    array.count += 1
 
 
 # Add an element to the end of the given array
