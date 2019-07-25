@@ -1,6 +1,6 @@
 
 
-# Do not use any of the built in array functions for this exercise
+# Do n ot use any of the built in array functions for this exercise
 class array:
     def __init__(self):
         # Your code here
